@@ -108,6 +108,14 @@
     .about-copy p{font-size:16px}
     .map-embed{width:100%;min-height:450px;border:1px solid rgba(166,43,36,.66);background:#f7f0e9}
     .map-embed iframe{display:block;width:100%;height:100%;min-height:450px;border:0}
+    .rail{padding-inline:max(48px,calc((100vw - 1180px)/2 + 32px));scroll-padding-inline:max(48px,calc((100vw - 1180px)/2 + 32px));scrollbar-width:thin;scrollbar-color:rgba(166,43,36,.82) transparent}
+    .rail::-webkit-scrollbar{height:10px}
+    .rail::-webkit-scrollbar-track{margin-inline:48px;background:transparent}
+    .rail::-webkit-scrollbar-thumb{border:2px solid transparent;border-radius:999px;background:rgba(166,43,36,.82);background-clip:padding-box}
+    .rail::-webkit-scrollbar-button{display:none;width:0;height:0}
+    .process-grid{height:auto;max-width:1120px}
+    .process-grid .process-path,.process-grid .step{display:none}
+    .process-image{display:block;width:100%;height:auto}
     @media(max-width:860px){
       .about-inner{grid-template-columns:1fr}
       .about-gallery{min-height:420px}
@@ -151,7 +159,8 @@
       .new-arrivals{padding:66px 0}.new-arrivals .section-title{padding-inline:16px}.new-arrivals-grid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:72vw;gap:12px;max-width:none;overflow-x:auto;padding:0 16px 14px;scroll-snap-type:x mandatory}.arrival-photo{scroll-snap-align:start}.arrival-placeholder{aspect-ratio:1.15/1}
       .product-card img{height:270px}
       .process{padding-top:58px;padding-bottom:58px}
-      .process-grid{width:1120px;max-width:none;height:560px;transform-origin:top left}
+      .process-grid{width:100%;max-width:none;height:auto;transform:none!important;margin-bottom:0!important}
+      .rail{padding-inline:28px;scroll-padding-inline:28px}
       .process-path.desktop{display:block}.process-path.tablet,.process-path.mobile{display:none}
       .step:nth-of-type(1){left:2%;top:2%;width:220px}
       .step:nth-of-type(2){left:38%;top:15%;width:240px}
@@ -163,6 +172,8 @@
       .step h3{font-size:20px}.step p{font-size:13px}
       .hero .headline{font-size:27px;line-height:1.12;letter-spacing:.01em}
     }
+    .process-grid{height:auto}
+    .process-grid .process-path,.process-grid .step{display:none!important}
   </style>
 </head>
 <body>
@@ -248,8 +259,8 @@
     <section class="about" id="about">
       <div class="about-inner">
         <div class="about-gallery">
-          <img src="assets/images/23_2.webp" alt="BAO29 courtyard flags" />
           <img src="assets/images/19_4.webp" alt="BAO29 red door" />
+          <img src="assets/images/23_2.webp" alt="BAO29 courtyard flags" />
           <img src="assets/images/05_image_5.webp" alt="BAO29 courtyard" />
         </div>
         <div class="about-copy">
@@ -267,6 +278,7 @@
           <p class="section-note" data-i18n="process_note">Small-batch, handmade, steamed fresh. Serious food, not-too-serious attitude.</p>
         </div>
         <div class="process-grid">
+          <img class="process-image" src="assets/images/bao29-process.webp" alt="Five-step illustrated BAO29 bao-making process" />
           <svg class="process-path desktop" viewBox="0 0 1120 560" preserveAspectRatio="none" aria-hidden="true">
             <defs><marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a62b24" stroke="none"/></marker></defs>
             <path d="M160 112 C260 38 380 54 500 122" marker-end="url(#arrow-red)"/>
@@ -427,14 +439,8 @@
     }
     function syncMobileProcessScale(){
       const grid=document.querySelector('.process-grid');
-      if(window.innerWidth<=560){
-        const scale=(window.innerWidth-32)/1120;
-        grid.style.transform=`scale(${scale})`;
-        grid.style.marginBottom=`${560*scale-560}px`;
-      }else{
-        grid.style.transform='';
-        grid.style.marginBottom='';
-      }
+      grid.style.transform='';
+      grid.style.marginBottom='';
     }
     document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
     renderProducts();

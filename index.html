@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BAO29 is a Hutong bao shop in Beijing's Guozijian area, serving creative Taiwanese and Beijing-style bao and weekend bao-making workshops." />
+  <title>BAO29 | Hutong bao shop in Beijing</title>
+  <style>
+    :root{
+      --bg:#f6f0e6;--paper:#fff8ed;--ink:#111;--muted:#645b50;--navy:#13235b;
+      --red:#b43a2f;--pine:#2f5d43;--pine-light:#dfe8d5;--guava:#f6c2d0;
+      --yellow:#ffd84d;--line:rgba(17,17,17,.18);--radius:18px;
+      --display:Georgia,"Times New Roman","Noto Serif SC",serif;
+      --sans:Inter,"Helvetica Neue",Arial,"Noto Sans","PingFang SC",sans-serif;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.45;overflow-x:hidden}
+    body:before{content:"";pointer-events:none;position:fixed;inset:0;background-image:radial-gradient(rgba(0,0,0,.08) .8px,transparent .8px);background-size:5px 5px;mix-blend-mode:multiply;opacity:.18;z-index:50}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.wrap{max-width:1240px;margin:auto}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(246,240,230,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .announcement{padding:7px 14px;background:var(--ink);color:var(--paper);font-size:11px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.12em}
+    .nav{max-width:1280px;margin:auto;padding:15px 22px;display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center}
+    .navlinks{display:flex;gap:18px;align-items:center;font-size:12px;font-weight:850;text-transform:uppercase;letter-spacing:.09em}
+    .navlinks a:hover,.footer a:hover{text-decoration:underline;text-underline-offset:4px}.navlinks.right{justify-content:flex-end}
+    .brandmark{display:flex;align-items:center;gap:8px;font-family:var(--display);font-size:34px;font-weight:900;color:var(--navy);letter-spacing:-.08em}
+    .brandmark .dot{width:16px;height:16px;border-radius:50%;background:var(--red);border:1.5px solid var(--ink);box-shadow:3px 3px 0 var(--yellow)}
+    .lang{display:flex;gap:5px;align-items:center}.lang button{border:1px solid var(--ink);background:transparent;padding:5px 7px;border-radius:999px;font-size:10px;font-weight:800;cursor:pointer}.lang button.active{background:var(--navy);border-color:var(--navy);color:white}
+    .hero{position:relative;min-height:82vh;display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--ink)}
+    .hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.84) contrast(.97)}
+    .hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(246,240,230,.57),rgba(246,240,230,.82) 68%,rgba(246,240,230,.93))}
+    .hero-inner{position:relative;z-index:1;width:min(920px,92vw);padding:84px 18px 64px;text-align:center}.hero-inner>div:first-child{display:flex;flex-direction:column;align-items:center}
+    .kicker,.eyebrow{color:var(--red);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    h1,h2,.headline,.big-quote{font-family:var(--display)}h1{margin:6px 0 8px;font-size:clamp(96px,18vw,224px);font-weight:900;line-height:.78;letter-spacing:-.13em;color:var(--ink)}
+    .headline{margin:4px auto 14px;max-width:850px;color:var(--navy);font-size:clamp(25px,4.2vw,54px);font-weight:900;line-height:.97;letter-spacing:-.07em}
+    .subhead{max-width:680px;margin:0 auto;color:#27231f;font-size:clamp(16px,1.8vw,22px);font-weight:650}.info-row{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+    .pill{padding:7px 11px;border:1px solid var(--ink);border-radius:999px;background:rgba(255,248,237,.78);font-size:12px;font-weight:800}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:999px;padding:12px 19px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:.18s transform,.18s background;cursor:pointer}.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+    .btn.primary{background:var(--navy);border-color:var(--navy);color:white}.btn.secondary{background:var(--yellow)}.btn.dark{background:var(--pine);border-color:var(--pine);color:white}
+    .hero-card{position:absolute;right:-50px;bottom:-145px;width:220px;padding:10px;background:var(--paper);border:1px solid var(--ink);transform:rotate(7deg)}.hero-card img{aspect-ratio:1;object-fit:cover}
+    .ticker{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--ink);background:var(--guava)}.ticker-track{display:inline-block;padding:9px 0;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;animation:marquee 20s linear infinite}.ticker-track span{margin:0 28px}@keyframes marquee{to{transform:translateX(-50%)}}
+    section{padding:96px 24px;border-bottom:1px solid var(--line);scroll-margin-top:108px}.section-title{text-align:center;max-width:820px;margin:0 auto 42px}.section-title:before{content:"BAO29 · BEIJING";display:block;margin-bottom:8px;color:var(--red);font-size:11px;font-weight:900;letter-spacing:.17em}.section-note{max-width:600px;margin:15px auto 0;color:var(--muted);font-weight:650;font-size:16px}
+    h2{margin:0;color:var(--navy);font-size:clamp(48px,7vw,92px);font-weight:900;line-height:.9;letter-spacing:-.065em}
+    .process{position:relative;background:#f3e8d8;overflow:hidden}.process:before{content:"";position:absolute;width:340px;height:250px;right:-110px;top:-65px;border:2px solid var(--red);border-radius:47% 53% 42% 58%;transform:rotate(18deg)}
+    .process-grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.step{min-height:205px;padding:17px;background:rgba(255,248,237,.82);border:1.5px solid var(--ink);border-radius:26px}.step:nth-child(odd){transform:rotate(1deg)}.step:nth-child(even){transform:translateY(18px) rotate(-1deg)}.step-num{color:var(--red);font-size:11px;font-weight:900;letter-spacing:.15em}.doodle{height:78px;margin:10px 0;display:grid;place-items:center}.doodle svg{width:90px;height:74px}.doodle path,.doodle circle,.doodle line{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.doodle .fill{fill:var(--yellow)}.step h3{margin:0 0 6px;font-size:19px;font-weight:900;line-height:1}.step p{margin:0;color:var(--muted);font-size:13px;font-weight:650}
+    .products{background:var(--bg);padding-inline:0}.products .wrap{max-width:none}.products .section-title{padding-inline:24px}.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,270px);gap:14px;overflow-x:auto;padding:4px 24px 25px;scroll-snap-type:x mandatory;scrollbar-color:var(--navy) transparent}.product-card{scroll-snap-align:start;padding:10px;background:rgba(255,255,255,.34);border:1px solid var(--line)}.product-card img{width:100%;aspect-ratio:1/1.04;object-fit:cover;background:var(--paper)}.product-card .meta{padding:12px 2px 4px}.tag{display:inline-block;margin-bottom:9px;padding:3px 7px;border:1px solid var(--ink);border-radius:999px;background:var(--yellow);font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.tag.drink{background:#d9ebff}.tag.sweet{background:#ffdce8}.tag.veg{background:var(--pine-light)}.product-card h3{margin:0;font-size:16px;font-weight:900;line-height:1.08;text-transform:uppercase}.product-cn{display:block;margin:5px 0 7px;color:var(--red);font-size:12px;font-weight:800}.product-card p{margin:0;color:var(--muted);font-size:12px;font-weight:600}
+    .about{padding:0;background:var(--pine);color:white}.about-inner{display:grid;grid-template-columns:1.08fr .92fr;min-height:680px}.about-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.45)}.about-gallery img{width:100%;height:100%;object-fit:cover}.about-gallery img:first-child{grid-row:span 2}.about-copy{padding:72px 54px;display:flex;flex-direction:column;justify-content:center}.about h2{color:var(--paper)}.about p{max-width:620px;color:#f5eee5;font-size:18px;font-weight:620}.big-quote{margin:20px 0;color:var(--yellow);font-size:clamp(31px,4vw,56px);font-weight:900;line-height:.96;letter-spacing:-.06em}
+    .workshop{background:#f6e7e0}.workshop-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.workshop-photos img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px}.workshop-card{max-width:820px;margin:30px auto 0;padding:26px 28px;border:1px solid var(--ink);border-radius:24px;background:rgba(255,248,237,.86)}.workshop-card h3{font-family:var(--display)}.price-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.price{padding:13px 15px;border:1px solid var(--line);background:white}.price strong{display:block;color:var(--red);font-size:34px;line-height:.95;letter-spacing:-.06em}.details{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin:18px 0}.detail{display:flex;gap:8px;font-size:14px;font-weight:750}.detail b{color:var(--red)}
+    .visit{background:var(--paper)}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visit-card,.map-card{padding:27px;border:1px solid var(--ink);background:var(--bg)}.visit-card h3{margin:0 0 14px;color:var(--navy);font-family:var(--display);font-size:40px;letter-spacing:-.06em}.visit-card p{font-size:17px;font-weight:700}.map-card{display:grid;place-items:center;min-height:290px;background:repeating-linear-gradient(135deg,#f6f0e6,#f6f0e6 18px,#fff8ed 18px,#fff8ed 36px);text-align:center}.map-pin{color:var(--red);font-size:72px;line-height:1}
+    .footer{padding:26px 24px;background:var(--ink);color:var(--paper)}.footer-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer strong{font-family:var(--display);font-size:30px;letter-spacing:-.06em}.footer span,.footer a{color:#e5ddd2;font-size:13px;font-weight:700}.footer-links{display:flex;gap:15px;flex-wrap:wrap}
+    @media(max-width:860px){.nav{grid-template-columns:1fr auto}.brandmark{grid-column:1;grid-row:1}.navlinks.left{display:none}.navlinks.right{grid-column:2;grid-row:1}.navlinks.right>a{display:none}.hero{min-height:76vh}.hero-card{display:none}.process-grid{grid-template-columns:repeat(2,1fr)}.step:nth-child(even){transform:rotate(-1deg)}.about-inner,.visit-grid{grid-template-columns:1fr}.about-gallery{min-height:420px}.about-copy{padding:54px 25px}.workshop-photos{gap:8px}.workshop-card{padding:22px}}
+    @media(max-width:560px){section{padding:72px 16px}.announcement{font-size:9px}.nav{padding:12px 14px;gap:8px}.brandmark{font-size:27px}.lang{gap:3px}.lang button{padding:4px 5px;font-size:9px}.hero-inner{padding:65px 8px 48px}h1{font-size:clamp(90px,31vw,150px)}.headline{font-size:29px}.subhead{font-size:15px}.info-row{gap:6px}.pill{padding:6px 8px;font-size:11px}.cta-row{justify-content:center}.btn{padding:10px 13px;font-size:10px}.process-grid{grid-template-columns:1fr}.rail{grid-auto-columns:minmax(215px,76vw);padding-inline:16px}.about-gallery{min-height:330px}.about-copy{padding:48px 18px}.workshop-photos{grid-template-columns:1fr}.workshop-photos img{aspect-ratio:1.3/1}.price-row,.details{grid-template-columns:1fr}.visit-card,.map-card{padding:20px}}
+
+    /* Modern Chinese refinement: restrained red, warm white, crisp ink lines. */
+    :root{
+      --bg:#f4efe8;--paper:#fffdf8;--ink:#171311;--muted:#71655d;--navy:#171311;
+      --red:#a62b24;--pine:#a62b24;--pine-light:#f4e8e3;--guava:#fffdf8;
+      --yellow:#f1e3d6;--line:rgba(89,43,37,.22);--display:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+    }
+    body:before{background-image:linear-gradient(rgba(166,43,36,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(166,43,36,.035) 1px,transparent 1px);background-size:18px 18px;opacity:.75}
+    .announcement{background:var(--red);font-family:var(--sans);letter-spacing:.16em}
+    .topbar{background:rgba(255,253,248,.95);border-bottom:1px solid var(--red)}
+    .brandmark{color:var(--red);font-family:var(--display);font-weight:800;letter-spacing:-.08em}.brandmark .dot{width:13px;height:13px;background:var(--red);border:0;box-shadow:none}
+    .navlinks{color:#352a27}.lang button{border-color:rgba(166,43,36,.5);border-radius:2px;color:var(--red);font-family:var(--sans)}.lang button.active{background:var(--red);border-color:var(--red)}
+    .hero-bg img{filter:saturate(.76) contrast(1.04)}.hero-bg:after{background:linear-gradient(180deg,rgba(255,253,248,.46),rgba(255,253,248,.78) 69%,rgba(255,253,248,.94))}
+    h1{color:var(--red);font-family:var(--display);font-weight:800;letter-spacing:-.12em}.headline{color:var(--ink);font-weight:800}.kicker,.eyebrow{color:var(--red)}
+    .pill{border-color:rgba(166,43,36,.56);border-radius:2px;background:rgba(255,253,248,.82);color:#412923}.btn{border-radius:2px;box-shadow:none}.btn:hover{transform:translateY(-2px)}.btn.primary,.btn.dark{background:var(--red);border-color:var(--red)}.btn.secondary{background:var(--paper);border-color:var(--red);color:var(--red)}
+    .hero-card{border-color:var(--red);background:var(--paper)}
+    .ticker{border-color:var(--red);background:var(--paper);color:var(--red)}
+    .section-title:before{color:var(--red)}h2{color:var(--red);font-weight:800}
+    .process{background:#f1e8df}.process:before{border-color:rgba(166,43,36,.6);border-radius:50%}.step{border:1px solid rgba(166,43,36,.66);border-radius:3px;background:rgba(255,253,248,.88)}.doodle path,.doodle circle,.doodle line{stroke:var(--red);stroke-width:3}.doodle .fill{fill:#f1e3d6;stroke:var(--red)}.step h3{font-family:var(--display);color:#3f211d;font-weight:800}
+    .product-card{border-color:rgba(166,43,36,.28);background:rgba(255,253,248,.7)}.tag,.tag.drink,.tag.sweet,.tag.veg{border-color:rgba(166,43,36,.72);border-radius:1px;background:transparent;color:var(--red)}.product-card h3{color:#34211e}.product-cn{color:var(--red)}
+    .about{background:var(--red)}.about h2{color:var(--paper)}.about p{color:#fff8f1}.big-quote{color:#fff8ed;font-weight:800}
+    .workshop{background:#f2ebe4}.workshop-photos img{border-radius:2px}.workshop-card{border-color:rgba(166,43,36,.6);border-radius:3px;background:rgba(255,253,248,.92)}.price{border-color:rgba(166,43,36,.28)}.price strong,.detail b{color:var(--red)}
+    .visit{background:var(--paper)}.visit-card,.map-card{border-color:rgba(166,43,36,.66);background:#f7f0e9}.visit-card h3{color:var(--red)}.map-card{background:linear-gradient(135deg,#f7f0e9 25%,#fffdf8 25%,#fffdf8 50%,#f7f0e9 50%,#f7f0e9 75%,#fffdf8 75%);background-size:30px 30px}.map-pin{color:var(--red)}
+    .footer{background:#211614}.footer strong{color:#fff8ed}
+    .about-gallery{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr}
+    .about-gallery img:first-child{grid-row:auto}
+    .hero-bg:after{display:none}
+    .hero-bg img{filter:saturate(.92) contrast(1.03) brightness(.8)}
+    .hero-inner{width:min(860px,92vw);text-shadow:0 2px 16px rgba(0,0,0,.5)}
+    .hero-logo{width:clamp(132px,18vw,205px);height:auto;margin:0 auto 14px}
+    .hero h1{display:none}
+    .hero .kicker,.hero .headline,.hero .subhead{color:#fff}
+    .hero .headline{margin-top:2px;max-width:900px;font-size:clamp(28px,3.6vw,46px);line-height:1.08;letter-spacing:.015em}
+    .hero .subhead{max-width:750px;font-size:clamp(13px,1.25vw,16px);font-weight:400;line-height:1.55;letter-spacing:.01em}
+    .hero .pill{border-color:rgba(255,255,255,.88);background:rgba(55,19,16,.52);color:#fff;text-shadow:none}
+    .hero .btn{border-color:#fff;text-shadow:none}
+    .hero .btn.primary,.hero .btn.dark{background:rgba(166,43,36,.92);border-color:#fff}
+    .hero .btn.secondary{background:rgba(255,253,248,.94);border-color:#fff;color:var(--red)}
+    .hero-card{display:none}
+    .product-card{padding:0;border:0;background:transparent}
+    .product-card img{aspect-ratio:auto;height:300px;object-fit:contain;background:transparent}
+    .product-card .meta{padding:14px 0 4px}
+    .tag,.tag.drink,.tag.sweet,.tag.veg{padding:0;border:0;background:transparent}
+    .new-arrivals{padding:84px 24px 90px;background:var(--paper)}
+    .new-arrivals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:0 auto}
+    .arrival-placeholder{display:grid;place-items:center;aspect-ratio:4/5;border:1px solid rgba(166,43,36,.55);background:linear-gradient(135deg,#f4efe8 25%,#fffdf8 25%,#fffdf8 50%,#f4efe8 50%,#f4efe8 75%,#fffdf8 75%);background-size:26px 26px;color:var(--red);text-align:center}
+    .arrival-placeholder strong{display:block;font-family:var(--display);font-size:clamp(28px,3vw,44px);letter-spacing:-.04em}
+    .arrival-placeholder span{display:block;margin-top:8px;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    .arrival-photo{width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;background:#17130f}
+    .space-headline{padding:82px 24px 46px;border-bottom:1px solid var(--line);background:var(--bg);text-align:center}
+    .space-headline .section-title{margin-bottom:0}
+    .about-inner{grid-template-columns:2fr 1fr}
+    .about-gallery{min-height:640px}
+    .about-gallery img:nth-child(2){object-fit:cover;background:transparent}
+    .about-copy{padding:58px 36px}
+    .about-copy h2{font-size:clamp(42px,5vw,68px)}
+    .about-copy .big-quote{font-size:clamp(25px,3vw,42px)}
+    .about-copy p{font-size:16px}
+    .map-embed{width:100%;min-height:450px;border:1px solid rgba(166,43,36,.66);background:#f7f0e9}
+    .map-embed iframe{display:block;width:100%;height:100%;min-height:450px;border:0}
+    @media(max-width:860px){
+      .about-inner{grid-template-columns:1fr}
+      .about-gallery{min-height:420px}
+    }
+    .process{padding-top:74px;padding-bottom:76px}
+    .process-grid{display:block;max-width:1120px;height:560px;margin:0 auto}
+    .process-path{position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+    .process-path path{fill:none;stroke:var(--red);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .process-path.tablet,.process-path.mobile{display:none}
+    .step{position:absolute;z-index:1;min-height:0;padding:0;border:0;border-radius:0;background:transparent;transform:none!important}
+    .step:nth-of-type(1){left:2%;top:2%;width:220px}
+    .step:nth-of-type(2){left:38%;top:15%;width:240px}
+    .step:nth-of-type(3){right:2%;top:2%;width:230px}
+    .step:nth-of-type(4){right:8%;top:49%;width:245px}
+    .step:nth-of-type(5){left:13%;top:51%;width:240px}
+    .step-num{display:inline-block;margin-bottom:4px;padding-bottom:2px;border-bottom:1px solid rgba(166,43,36,.5)}
+    .doodle{display:block;height:auto;margin:4px 0 10px}
+    .doodle svg{width:var(--icon-size,110px);height:var(--icon-size,110px)}
+    .step:nth-of-type(1) .doodle{padding-left:34px}.step:nth-of-type(1){--icon-size:110px}
+    .step:nth-of-type(2) .doodle{padding-left:96px}.step:nth-of-type(2){--icon-size:82px}
+    .step:nth-of-type(3) .doodle{padding-left:30px}.step:nth-of-type(3){--icon-size:126px}
+    .step:nth-of-type(4) .doodle{padding-left:82px}.step:nth-of-type(4){--icon-size:96px}
+    .step:nth-of-type(5) .doodle{padding-left:10px}.step:nth-of-type(5){--icon-size:112px}
+    .step h3{font-size:20px}.step p{max-width:250px;font-size:13px}
+    .step-num,.step h3,.step p{position:relative;background:#f1e8df}
+    @media(max-width:900px) and (min-width:561px){
+      .process-grid{height:500px}
+      .process-path.desktop{display:none}.process-path.tablet{display:block}
+      .step:nth-of-type(1){left:0;top:1%;width:190px}
+      .step:nth-of-type(2){left:36%;top:15%;width:210px}
+      .step:nth-of-type(3){right:0;top:1%;width:190px}
+      .step:nth-of-type(4){right:4%;top:49%;width:210px}
+      .step:nth-of-type(5){left:4%;top:51%;width:210px}
+      .step:nth-of-type(1) .doodle{padding-left:18px}.step:nth-of-type(2) .doodle{padding-left:62px}.step:nth-of-type(3) .doodle{padding-left:24px}.step:nth-of-type(4) .doodle{padding-left:58px}.step:nth-of-type(5) .doodle{padding-left:6px}
+      .step:nth-of-type(1){--icon-size:96px}.step:nth-of-type(2){--icon-size:74px}.step:nth-of-type(3){--icon-size:104px}.step:nth-of-type(4){--icon-size:84px}.step:nth-of-type(5){--icon-size:94px}
+      .step h3{font-size:18px}.step p{font-size:12px}
+    }
+    @media(max-width:560px){
+      .about-gallery{grid-template-columns:1fr;grid-template-rows:repeat(3,220px);min-height:auto}
+      .about-gallery img:nth-child(2){object-fit:cover}
+      .new-arrivals{padding:66px 0}.new-arrivals .section-title{padding-inline:16px}.new-arrivals-grid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:72vw;gap:12px;max-width:none;overflow-x:auto;padding:0 16px 14px;scroll-snap-type:x mandatory}.arrival-photo{scroll-snap-align:start}.arrival-placeholder{aspect-ratio:1.15/1}
+      .product-card img{height:270px}
+      .process{padding-top:58px;padding-bottom:58px}
+      .process-grid{width:1120px;max-width:none;height:560px;transform-origin:top left}
+      .process-path.desktop{display:block}.process-path.tablet,.process-path.mobile{display:none}
+      .step:nth-of-type(1){left:2%;top:2%;width:220px}
+      .step:nth-of-type(2){left:38%;top:15%;width:240px}
+      .step:nth-of-type(3){left:auto;right:2%;top:2%;width:230px}
+      .step:nth-of-type(4){left:auto;right:8%;top:49%;width:245px}
+      .step:nth-of-type(5){left:13%;top:51%;width:240px}
+      .step:nth-of-type(1) .doodle{padding-left:34px}.step:nth-of-type(2) .doodle{padding-left:96px}.step:nth-of-type(3) .doodle{padding-left:30px}.step:nth-of-type(4) .doodle{padding-left:82px}.step:nth-of-type(5) .doodle{padding-left:10px}
+      .step:nth-of-type(1){--icon-size:110px}.step:nth-of-type(2){--icon-size:82px}.step:nth-of-type(3){--icon-size:126px}.step:nth-of-type(4){--icon-size:96px}.step:nth-of-type(5){--icon-size:112px}
+      .step h3{font-size:20px}.step p{font-size:13px}
+      .hero .headline{font-size:27px;line-height:1.12;letter-spacing:.01em}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="announcement" data-i18n="announcement">Fresh handmade bao in Beijing · Workshop every weekend</div>
+    <nav class="nav">
+      <div class="navlinks left">
+        <a href="#products" data-i18n="nav_products">Menu</a>
+        <a href="#process" data-i18n="nav_process">Process</a>
+        <a href="#workshop" data-i18n="nav_workshop">Workshop</a>
+      </div>
+      <a class="brandmark" href="#top"><span class="dot"></span><span>BAO29</span></a>
+      <div class="navlinks right">
+        <a href="#visit" data-i18n="nav_visit">Visit</a>
+        <div class="lang" aria-label="Language switcher">
+          <button class="active" data-lang="en">EN</button>
+          <button data-lang="zh">中文</button>
+          <button data-lang="ja">日本語</button>
+          <button data-lang="ko">한국어</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"><img src="assets/images/20_5.webp" alt="BAO29 courtyard and red wall" /></div>
+      <div class="hero-inner">
+        <div>
+          <img class="hero-logo" src="assets/images/bao29-logo-white.webp" alt="BAO29 logo" />
+          <div class="kicker" data-i18n="hero_kicker">Hutong bao shop · Guozijian Beijing</div>
+          <h1>BAO29</h1>
+          <p class="headline" data-i18n="hero_headline">Taiwanese & Beijing-style creative bao.</p>
+          <p class="subhead" data-i18n="hero_subhead">The Hutong bao shop beside the Guozijian. Hot bao, fruit tea, and weekend bao-making workshops.</p>
+          <div class="info-row">
+            <span class="pill" data-i18n="hero_address">No.29 Jianchang Hutong, Dongcheng, Beijing</span>
+            <span class="pill" data-i18n="hero_hours">Open daily 11:00–19:00</span>
+            <span class="pill" data-i18n="hero_takeaway">Takeaway friendly</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="#products" data-i18n="cta_menu">View Menu</a>
+            <a class="btn secondary" href="#workshop" data-i18n="cta_workshop">Book Workshop</a>
+            <a class="btn dark" href="https://www.google.com/maps/search/?api=1&query=BAO29%20Jianchang%20Hutong%2029%20Dongcheng%20Beijing" target="_blank" rel="noopener" data-i18n="cta_directions">Get Directions</a>
+          </div>
+        </div>
+        <div class="hero-card"><img src="assets/images/06_image_6.webp" alt="Fresh steamed bao at BAO29" /></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Hot bao under the red wall</span><span>Taiwanese comfort × Beijing flavor</span><span>Weekend bao-making workshop</span><span>Walk in hungry, walk out softer</span><span>Hot bao under the red wall</span><span>Taiwanese comfort × Beijing flavor</span><span>Weekend bao-making workshop</span><span>Walk in hungry, walk out softer</span></div></div>
+
+    <section class="products" id="products">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="products_title">Bao, Fruit Tea & Seasonal Specials</h2>
+          <p class="section-note" data-i18n="products_note">Start with these eight on your first visit: savory, sweet, veggie, and fruity choices, all made for sipping and snacking as you wander.</p>
+        </div>
+        <div class="rail" id="productRail"></div>
+      </div>
+    </section>
+
+    <section class="new-arrivals" id="new-arrivals">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="new_title">新品上市</h2>
+          <p class="section-note" data-i18n="new_note">季节灵感不定期出现，本季风味为中国云南食材，限定款已上线。</p>
+        </div>
+        <div class="new-arrivals-grid">
+          <img class="arrival-photo" src="assets/images/new-arrival-bamboo-shoot.webp" alt="Yunnan sweet bamboo shoot pork bao" />
+          <img class="arrival-photo" src="assets/images/new-arrival-matsutake.webp" alt="Yunnan wild matsutake pork bao" />
+          <img class="arrival-photo" src="assets/images/new-arrival-rose-mantou.webp" alt="Yunnan rose layered mantou" />
+        </div>
+      </div>
+    </section>
+
+    <div class="space-headline">
+      <div class="section-title">
+        <h2 data-i18n="space_title">About BAO29</h2>
+        <p class="section-note" data-i18n="space_note">红墙边的一间小院，树影、热气和胡同里的慢节奏。</p>
+      </div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-gallery">
+          <img src="assets/images/23_2.webp" alt="BAO29 courtyard flags" />
+          <img src="assets/images/19_4.webp" alt="BAO29 red door" />
+          <img src="assets/images/05_image_5.webp" alt="BAO29 courtyard" />
+        </div>
+        <div class="about-copy">
+          <h2 data-i18n="about_title">Space</h2>
+          <div class="big-quote" data-i18n="about_quote">Taiwan’s warmth, Beijing’s courtyard, one handmade bao.</div>
+          <p data-i18n="about_body">BAO29 sits at No.29 Jianchang Hutong, close to the red walls of Guozijian. We make bao that travel between Taiwan and Beijing: familiar, playful, handmade, and a little unexpected.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="process_title">How We Make Bao</h2>
+          <p class="section-note" data-i18n="process_note">Small-batch, handmade, steamed fresh. Serious food, not-too-serious attitude.</p>
+        </div>
+        <div class="process-grid">
+          <svg class="process-path desktop" viewBox="0 0 1120 560" preserveAspectRatio="none" aria-hidden="true">
+            <defs><marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a62b24" stroke="none"/></marker></defs>
+            <path d="M160 112 C260 38 380 54 500 122" marker-end="url(#arrow-red)"/>
+            <path d="M570 126 C700 38 850 50 940 118" marker-end="url(#arrow-red)"/>
+            <path d="M980 155 C1060 250 1020 360 900 410" marker-end="url(#arrow-red)"/>
+            <path d="M830 440 C640 550 390 550 245 400" marker-end="url(#arrow-red)"/>
+            <path d="M205 420 C100 340 80 225 135 145" marker-end="url(#arrow-red)"/>
+          </svg>
+          <svg class="process-path tablet" viewBox="0 0 740 500" preserveAspectRatio="none" aria-hidden="true">
+            <defs><marker id="arrow-red-tablet" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a62b24" stroke="none"/></marker></defs>
+            <path d="M116 102 C222 28 322 40 389 100" marker-end="url(#arrow-red-tablet)"/>
+            <path d="M449 102 C528 36 610 44 654 106" marker-end="url(#arrow-red-tablet)"/>
+            <path d="M675 136 C728 214 706 306 615 354" marker-end="url(#arrow-red-tablet)"/>
+            <path d="M566 396 C454 490 198 500 88 360" marker-end="url(#arrow-red-tablet)"/>
+            <path d="M104 370 C30 296 36 186 92 124" marker-end="url(#arrow-red-tablet)"/>
+          </svg>
+          <svg class="process-path mobile" viewBox="0 0 358 1100" preserveAspectRatio="none" aria-hidden="true">
+            <defs><marker id="arrow-red-mobile" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a62b24" stroke="none"/></marker></defs>
+            <path d="M108 128 C269 135 281 205 224 260" marker-end="url(#arrow-red-mobile)"/>
+            <path d="M234 325 C261 410 211 449 124 472" marker-end="url(#arrow-red-mobile)"/>
+            <path d="M115 566 C222 572 276 626 241 694" marker-end="url(#arrow-red-mobile)"/>
+            <path d="M231 764 C217 846 165 884 105 914" marker-end="url(#arrow-red-mobile)"/>
+          </svg>
+          <article class="step">
+            <div class="step-num">01</div>
+            <div class="doodle"><svg viewBox="0 0 120 90"><path d="M18 58c20-34 71-36 86 1"/><path d="M22 59c17 14 65 15 82 0"/><circle class="fill" cx="60" cy="52" r="20"/></svg></div>
+            <h3 data-i18n="step1_t">Wake the dough</h3><p data-i18n="step1_d">Soft, warm, ready to hold too much ambition.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">02</div>
+            <div class="doodle"><svg viewBox="0 0 120 90"><path d="M22 68h76l-9-42H31z"/><path d="M44 31l32 32M78 31L42 63"/><circle class="fill" cx="90" cy="21" r="10"/></svg></div>
+            <h3 data-i18n="step2_t">Mix the filling</h3><p data-i18n="step2_d">Taiwanese comfort, Beijing habits, a little surprise.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">03</div>
+            <div class="doodle"><svg viewBox="0 0 120 90"><path d="M30 61c15-25 44-28 61 0"/><path d="M36 60c13 11 42 11 50 0"/><path d="M42 45l10-12 8 12 9-13 7 13"/></svg></div>
+            <h3 data-i18n="step3_t">Fold by hand</h3><p data-i18n="step3_d">Every pleat keeps a small secret.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">04</div>
+            <div class="doodle"><svg viewBox="0 0 120 90"><path d="M26 64h68M32 64V32h56v32"/><path d="M40 32c0-10 10-10 10-20M60 32c0-10 10-10 10-20M79 32c0-10 10-10 10-20"/><circle class="fill" cx="60" cy="53" r="12"/></svg></div>
+            <h3 data-i18n="step4_t">Steam it hot</h3><p data-i18n="step4_d">The moment when the whole courtyard smells better.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">05</div>
+            <div class="doodle"><svg viewBox="0 0 120 90"><path d="M32 30h56v48H32z"/><path d="M32 30l28-18 28 18"/><path d="M49 52h22"/><circle class="fill" cx="88" cy="24" r="9"/></svg></div>
+            <h3 data-i18n="step5_t">Eat & wander</h3><p data-i18n="step5_d">For the courtyard, the hutong, or the walk after Lama Temple.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workshop" id="workshop">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="workshop_title">Bao Making Workshop</h2>
+          <p class="section-note" data-i18n="workshop_note">A hands-on local food experience: wrap, steam, taste, and take your bao home.</p>
+        </div>
+        <div class="workshop-grid">
+          <div class="workshop-photos">
+            <img src="assets/images/22_workshop7.webp" alt="Bao making workshop group" />
+            <img src="assets/images/01_workshop5.webp" alt="Hands making bao" />
+            <img src="assets/images/02_workshop9.webp" alt="Workshop group photo" />
+          </div>
+          <aside class="workshop-card">
+            <div class="kicker" data-i18n="workshop_kicker">Every Saturday & Sunday · 10:30–12:00</div>
+            <h3 style="font-size:42px;line-height:.95;margin:8px 0 10px;letter-spacing:-.06em" data-i18n="workshop_card_title">Make up to 9 bao by hand.</h3>
+            <p style="font-weight:720;color:var(--muted);font-size:16px" data-i18n="workshop_card_body">We provide all ingredients, aprons, and takeaway boxes. You may bring a favorite ingredient to add your own twist.</p>
+            <div class="price-row">
+              <div class="price"><strong>$59</strong><span data-i18n="price_one">per person</span></div>
+              <div class="price"><strong>$110</strong><span data-i18n="price_two">for two guests</span></div>
+            </div>
+            <div class="details">
+              <div class="detail"><b>✓</b><span data-i18n="detail_min">Starts from 2 guests</span></div>
+              <div class="detail"><b>✓</b><span data-i18n="detail_time">90 minutes, weekend mornings</span></div>
+              <div class="detail"><b>✓</b><span data-i18n="detail_take">Take home up to 9 handmade bao</span></div>
+              <div class="detail"><b>✓</b><span data-i18n="detail_group">Group booking available on request</span></div>
+            </div>
+            <a class="btn primary" href="tel:+8618310651653" style="width:100%;margin-top:10px" data-i18n="cta_book_phone">Book by Phone / Message</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="visit_title">Visit Us</h2>
+          <p class="section-note" data-i18n="visit_note">Walk-ins welcome. Come for a hot bao, stay for a quiet courtyard minute.</p>
+        </div>
+        <div class="visit-grid">
+          <div class="visit-card">
+            <h3>BAO29 包贰玖</h3>
+            <p><strong data-i18n="label_address">Address</strong><br><span data-i18n="full_address">BAO29, No.29 Jianchang Hutong, Dongcheng District, Beijing</span></p>
+            <p><strong data-i18n="label_hours">Hours</strong><br><span data-i18n="hours_text">Monday–Sunday 11:00–19:00</span></p>
+            <p><strong data-i18n="label_contact">Contact</strong><br><a href="tel:+8618310651653">+86 183 1065 1653</a></p>
+            <div class="cta-row"><a class="btn dark" href="https://www.google.com/maps/search/?api=1&query=BAO29%20Jianchang%20Hutong%2029%20Dongcheng%20Beijing" target="_blank" rel="noopener" data-i18n="cta_open_map">Open Map</a></div>
+          </div>
+          <div class="map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8072926779264!2d116.41158999999999!3d39.945699999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f05349c6db037b%3A0x109d2ee14de1b2a6!2z5Lit5Zu95YyX5Lqs5biC5Lic5Z-O5Yy6566t5Y6C6IOh5ZCMMjnlj7cg6YKu5pS_57yW56CBOiAxMDAwMTE!5e0!3m2!1szh-CN!2shk!4v1780404677046!5m2!1szh-CN!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BAO29 map"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <strong>BAO29</strong>
+      <span data-i18n="footer_text">Taiwanese & Beijing-style creative bao · No.29 Jianchang Hutong</span>
+      <div class="footer-links">
+        <a href="tel:+8618310651653" data-i18n="label_contact">Contact</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=BAO29%20Jianchang%20Hutong%2029%20Dongcheng%20Beijing" target="_blank" rel="noopener" data-i18n="cta_open_map">Open Map</a>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      {img:'04_1.webp', type:'salty', en:'Taiwanese Scallion Pork Bao', zh:'台式葱肉包', ja:'台湾風ねぎ豚肉まん', ko:'타이완식 파 돼지고기 바오', desc:{en:'Scallion aroma, juicy pork, old-school Taiwanese comfort.', zh:'葱香、肉香、面香，熟悉的台式热闹。', ja:'ねぎの香りと豚肉の旨み。台湾らしい懐かしさ。', ko:'파 향과 돼지고기의 고소함, 따뜻한 타이완식 맛.'}},
+      {img:'25_3.webp', type:'salty', en:'Old Beijing Fennel Pork Bao', zh:'老北京茴香酱肉包', ja:'北京風フェンネル味噌豚肉まん', ko:'베이징식 회향 장육 바오', desc:{en:'Fennel, savory sauce, and a hutong-style punch.', zh:'茴香和酱肉的老北京烟火气。', ja:'フェンネルと甘辛い肉味噌の北京らしい味。', ko:'회향과 장육이 주는 베이징 골목의 맛.'}},
+      {img:'24_2.webp', type:'salty', en:'Uncle Fugui’s Rice-Powder Pork Bao', zh:'福贵大爷的米粉肉包', ja:'福貴おじさんの米粉豚肉まん', ko:'푸구이 아저씨의 쌀가루 돼지고기 바오', desc:{en:'A fuller, richer pork bao with character.', zh:'更扎实、更有江湖气的一口肉包。', ja:'食べごたえのある、少し濃厚な豚肉まん。', ko:'더 묵직하고 진한 풍미의 돼지고기 바오.'}},
+      {img:'16_4.webp', type:'sweet', en:'Red Bean Truffle Chocolate Bao', zh:'红豆松露巧克力包', ja:'小豆トリュフチョコまん', ko:'팥 트러플 초콜릿 바오', desc:{en:'Dessert disguised as a bao. Soft, dark, and sweet.', zh:'伪装成包子的甜品，软糯又浓郁。', ja:'肉まんの形をしたデザート。柔らかく濃厚。', ko:'바오처럼 보이는 디저트. 부드럽고 진한 단맛.'}},
+      {img:'06_image_6.webp', type:'veg', en:'Yonghe Vegetable Bao', zh:'雍和蔬菜包', ja:'雍和野菜まん', ko:'융허 채소 바오', desc:{en:'A lighter courtyard bite for veggie lovers.', zh:'清爽、松弛，适合红墙边慢慢吃。', ja:'野菜好きにうれしい、軽やかな一品。', ko:'채소를 좋아하는 사람을 위한 가벼운 한입.'}},
+      {img:'10_6.webp', type:'drink', en:'Very Guava Guava Tea', zh:'很芭乐的芭乐茶', ja:'とてもグアバなグアバティー', ko:'아주 구아바다운 구아바 티', desc:{en:'Tropical, cheeky, and made for hot Beijing days.', zh:'热带、可爱，很适合北京夏天。', ja:'南国感たっぷり。暑い北京の日に。', ko:'열대 과일 느낌 가득, 더운 베이징에 잘 맞는 차.'}},
+      {img:'15_7.webp', type:'drink', en:'Signature Waxberry Fruit Tea', zh:'招牌杨梅水果茶', ja:'看板ヤマモモフルーツティー', ko:'시그니처 양메이 과일차', desc:{en:'Bright, tart, fruity — the summer reset button.', zh:'酸甜清爽，夏天重启键。', ja:'甘酸っぱく爽やか。夏のリセットボタン。', ko:'새콤달콤하고 산뜻한 여름의 리셋 버튼.'}},
+      {img:'21_5.webp', type:'drink', en:'Unsweetened Apple Cold Brew Tea', zh:'无糖苹果冷泡茶', ja:'無糖アップル水出し茶', ko:'무가당 애플 콜드브루 티', desc:{en:'Clean, crisp, and not trying too hard.', zh:'清爽、无糖，不用太努力也好喝。', ja:'すっきり、無糖。軽やかに飲めるお茶。', ko:'깔끔하고 산뜻한 무가당 차.'}}
+    ];
+
+    const dict = {
+      en:{
+        announcement:'Fresh handmade bao in Beijing · Workshop every weekend',nav_process:'Process',nav_products:'Menu',nav_workshop:'Workshop',nav_visit:'Visit',hero_kicker:'Hutong bao shop · Guozijian Beijing',hero_headline:'Taiwanese & Beijing-style creative bao.',hero_subhead:'The Hutong bao shop beside the Guozijian. Hot bao, fruit tea, and weekend bao-making workshops.',hero_address:'No.29 Jianchang Hutong, Dongcheng, Beijing',hero_hours:'Open daily 11:00–19:00',hero_takeaway:'Takeaway friendly',cta_menu:'View Menu',cta_workshop:'Book Workshop',cta_directions:'Get Directions',process_title:'How We Make Bao',process_note:'Small-batch, handmade, steamed fresh. Serious food, not-too-serious attitude.',step1_t:'Wake the dough',step1_d:'Soft, warm, ready to hold too much ambition.',step2_t:'Mix the filling',step2_d:'Taiwanese comfort, Beijing habits, a little surprise.',step3_t:'Fold by hand',step3_d:'Every pleat keeps a small secret.',step4_t:'Steam it hot',step4_d:'The moment when the whole courtyard smells better.',step5_t:'Eat & wander',step5_d:'For the courtyard, the hutong, or the walk after Lama Temple.',products_title:'Bao, Fruit Tea & Seasonal Specials',products_note:'Start with these eight on your first visit: savory, sweet, veggie, and fruity choices, all made for sipping and snacking as you wander.',new_title:'New Arrivals',new_note:'Seasonal inspirations appear from time to time. This season features ingredients from Yunnan, China. Limited editions are now available.',new_slot:'New photo coming soon',space_title:'About BAO29',space_note:'A small courtyard beside the red wall, with tree shadows, warm steam, and the slower rhythm of the hutong.',about_title:'Space',about_quote:'Taiwan’s warmth, Beijing’s courtyard, one handmade bao.',about_body:'BAO29 sits at No.29 Jianchang Hutong, close to the red walls of Guozijian. We make bao that travel between Taiwan and Beijing: familiar, playful, handmade, and a little unexpected.',workshop_title:'Bao Making Workshop',workshop_note:'A hands-on local food experience: wrap, steam, taste, and take your bao home.',workshop_kicker:'Every Saturday & Sunday · 10:30–12:00',workshop_card_title:'Make up to 9 bao by hand.',workshop_card_body:'We provide all ingredients, aprons, and takeaway boxes. You may bring a favorite ingredient to add your own twist.',price_one:'per person',price_two:'for two guests',detail_min:'Starts from 2 guests',detail_time:'90 minutes, weekend mornings',detail_take:'Take home up to 9 handmade bao',detail_group:'Group booking available on request',cta_book_phone:'Book by Phone / Message',visit_title:'Visit Us',visit_note:'Walk-ins welcome. Come for a hot bao, stay for a quiet courtyard minute.',label_address:'Address',label_hours:'Hours',label_contact:'Contact',full_address:'BAO29, No.29 Jianchang Hutong, Dongcheng District, Beijing',hours_text:'Monday–Sunday 11:00–19:00',cta_open_map:'Open Map',map_title:'Find the red wall, then follow the steam.',footer_text:'Taiwanese & Beijing-style creative bao · No.29 Jianchang Hutong',tag_salty:'Savory bao',tag_sweet:'Sweet bao',tag_veg:'Veggie bao',tag_drink:'Tea'
+      },
+      zh:{
+        announcement:'北京手作热包子 · 每周末包包子工作坊',nav_process:'制作流程',nav_products:'菜单',nav_workshop:'工作坊',nav_visit:'到店',hero_kicker:'国子监红墙旁 · 四合院包子铺',hero_headline:'台湾创意 × 北京创新风味的手作包子。',hero_subhead:'在国子监红墙旁，吃一口热乎乎的包子，喝一杯果茶，周末还可以来学包包子。',hero_address:'北京市东城区箭厂胡同29号',hero_hours:'每日 11:00–19:00',hero_takeaway:'支持外带',cta_menu:'查看菜单',cta_workshop:'预约工作坊',cta_directions:'导航到店',process_title:'包子是怎么做出来的',process_note:'小批量、手工包、热气上桌。认真做包子，但不用太正经。',step1_t:'醒一块面',step1_d:'柔软、热乎，准备装下很多野心。',step2_t:'拌一盆馅',step2_d:'台湾的热闹、北京的习惯，再加一点意外。',step3_t:'手工包褶',step3_d:'每一个褶子里都藏着一点秘密。',step4_t:'蒸到冒气',step4_d:'整个院子开始变香的那一刻。',step5_t:'拿着去逛',step5_d:'适合院子、胡同，也适合雍和宫之后的散步。',products_title:'包子、果茶和季节新品',products_note:'第一次来可以从这 8 个开始：咸的、甜的、素的、水果的，都适合边走边吃边喝。',new_title:'新品上市',new_note:'季节灵感不定期出现，本季风味为中国云南食材，限定款已上线。',new_slot:'新品照片即将更新',space_title:'关于 BAO29',space_note:'红墙边的一间小院，树影、热气和胡同里的慢节奏。',about_title:'空间环境',about_quote:'台湾的热闹，北京的院子，一个手作包子。',about_body:'包贰玖在箭厂胡同29号，靠近国子监红墙。我们做的是在台湾和北京之间旅行的包子：熟悉、好玩、手作，也有一点不按套路。',workshop_title:'包包子工作坊',workshop_note:'一次本地食物体验：和面、包馅、上蒸笼、品尝，把亲手包的包子带走。',workshop_kicker:'每周六日 · 10:30–12:00',workshop_card_title:'最多可亲手包 9 个包子。',workshop_card_body:'现场提供全部食材、围裙和包装盒。也可以自带喜欢的食材，加入自己的风味。',price_one:'单人',price_two:'双人价',detail_min:'2 人起开课',detail_time:'90 分钟，周末上午',detail_take:'最多带走 9 个亲手包的成品包子',detail_group:'可咨询团体预约',cta_book_phone:'电话 / 信息预约',visit_title:'来找我们',visit_note:'欢迎直接到店。来吃一个热包子，也在院子里松弛一分钟。',label_address:'地址',label_hours:'营业时间',label_contact:'联系方式',full_address:'北京市东城区箭厂胡同29号 包贰玖',hours_text:'周一至周日 11:00–19:00',cta_open_map:'打开地图',map_title:'找到红墙，然后跟着热气走。',footer_text:'台湾创意 × 北京创新风味手作包子 · 箭厂胡同29号',tag_salty:'咸包',tag_sweet:'甜包',tag_veg:'素包',tag_drink:'果茶'
+      },
+      ja:{
+        announcement:'北京の手作りバオ · 毎週末ワークショップ',nav_process:'作り方',nav_products:'メニュー',nav_workshop:'ワークショップ',nav_visit:'アクセス',hero_kicker:'北京・国子監近くの中庭バオショップ',hero_headline:'台湾と北京の味を合わせた、手作り創作バオ。',hero_subhead:'国子監の赤い壁のそばにある小さな中庭の店。熱々のバオ、フルーツティー、週末のバオ作り体験。',hero_address:'北京市東城区箭厂胡同29号',hero_hours:'毎日 11:00–19:00',hero_takeaway:'テイクアウト可',cta_menu:'メニューを見る',cta_workshop:'体験を予約',cta_directions:'道順を見る',process_title:'バオができるまで',process_note:'少量ずつ、手作り、蒸したて。味は真面目に、雰囲気は少しゆるく。',step1_t:'生地を起こす',step1_d:'やわらかく、温かく、具材を包む準備。',step2_t:'具材を混ぜる',step2_d:'台湾のやさしさ、北京の香り、少しの驚き。',step3_t:'手で包む',step3_d:'ひだの一つひとつに小さな秘密。',step4_t:'熱々に蒸す',step4_d:'中庭全体がいい香りになる瞬間。',step5_t:'食べて歩く',step5_d:'中庭でも、胡同でも、雍和宮の散歩にも。',products_title:'バオとお茶',products_note:'初めての方におすすめの8品。しょっぱい、甘い、野菜、フルーツ、歩き食べにも。',new_title:'季節の新作',new_note:'季節のアイデアが時々登場します。今季は中国・雲南の食材を使った限定メニューです。',new_slot:'新しい写真は近日公開',space_title:'BAO29について',space_note:'赤い壁のそばの小さな中庭。木漏れ日、湯気、胡同のゆるやかな時間。',about_title:'空間と中庭',about_quote:'台湾の温かさ、北京の中庭、ひとつの手作りバオ。',about_body:'BAO29は箭厂胡同29号、国子監の赤い壁の近くにあります。台湾と北京を行き来するような、親しみやすく遊び心のある手作りバオを作っています。',workshop_title:'バオ作りワークショップ',workshop_note:'包む、蒸す、味わう、持ち帰る。北京らしい食の体験です。',workshop_kicker:'毎週土日 · 10:30–12:00',workshop_card_title:'手作りバオを最大9個作れます。',workshop_card_body:'食材、エプロン、持ち帰り箱はこちらで用意します。好きな食材を持ち込むこともできます。',price_one:'1名',price_two:'2名料金',detail_min:'2名から開催',detail_time:'90分、週末午前',detail_take:'最大9個の手作りバオを持ち帰り',detail_group:'団体予約はお問い合わせください',cta_book_phone:'電話 / メッセージで予約',visit_title:'アクセス',visit_note:'予約なしでもどうぞ。熱々のバオと、中庭で少しだけ休憩を。',label_address:'住所',label_hours:'営業時間',label_contact:'連絡先',full_address:'BAO29, 北京市東城区箭厂胡同29号',hours_text:'月曜–日曜 11:00–19:00',cta_open_map:'地図を開く',map_title:'赤い壁を見つけたら、湯気の方へ。',footer_text:'台湾 × 北京スタイルの創作手作りバオ · 箭厂胡同29号',tag_salty:'しょっぱいバオ',tag_sweet:'甘いバオ',tag_veg:'野菜バオ',tag_drink:'お茶'
+      },
+      ko:{
+        announcement:'베이징 수제 바오 · 매주 주말 워크숍',nav_process:'만드는 과정',nav_products:'메뉴',nav_workshop:'워크숍',nav_visit:'방문',hero_kicker:'베이징 국자감 근처의 작은 마당 바오 가게',hero_headline:'타이완과 베이징의 맛을 담은 수제 창작 바오.',hero_subhead:'국자감 붉은 담장 옆 작은 마당 가게. 따뜻한 바오, 과일차, 주말 바오 만들기 워크숍을 만날 수 있어요.',hero_address:'베이징 둥청구 젠창후통 29호',hero_hours:'매일 11:00–19:00',hero_takeaway:'테이크아웃 가능',cta_menu:'메뉴 보기',cta_workshop:'워크숍 예약',cta_directions:'길찾기',process_title:'바오를 만드는 과정',process_note:'소량으로, 손으로 빚고, 갓 쪄냅니다. 음식은 진지하게, 분위기는 너무 무겁지 않게.',step1_t:'반죽 깨우기',step1_d:'부드럽고 따뜻하게, 속을 품을 준비를 합니다.',step2_t:'소 만들기',step2_d:'타이완의 편안함, 베이징의 향, 작은 놀라움.',step3_t:'손으로 빚기',step3_d:'주름마다 작은 비밀이 들어갑니다.',step4_t:'뜨겁게 찌기',step4_d:'마당 전체에 좋은 냄새가 퍼지는 순간.',step5_t:'먹고 걷기',step5_d:'마당에서도, 후통에서도, 라마 사원 산책 후에도 좋아요.',products_title:'바오, 차, 그리고 작은 재미',products_note:'처음 방문한다면 이 8가지부터. 짭짤한 맛, 달콤한 맛, 채소, 과일차까지.',new_title:'새로운 메뉴',new_note:'계절의 영감은 때때로 찾아옵니다. 이번 시즌은 중국 윈난 식재료를 담은 한정 메뉴입니다.',new_slot:'새로운 사진 곧 공개',space_title:'BAO29 소개',space_note:'붉은 담장 옆 작은 마당. 나무 그림자와 따뜻한 김, 후통의 느긋한 리듬을 느껴보세요.',about_title:'공간과 마당',about_quote:'타이완의 따뜻함, 베이징의 마당, 손으로 만든 바오 하나.',about_body:'BAO29는 젠창후통 29호, 국자감 붉은 담장 근처에 있습니다. 타이완과 베이징 사이를 여행하는 듯한 친숙하고 장난스러운 수제 바오를 만듭니다.',workshop_title:'바오 만들기 워크숍',workshop_note:'직접 빚고, 찌고, 맛보고, 집으로 가져가는 로컬 푸드 체험입니다.',workshop_kicker:'매주 토요일·일요일 · 10:30–12:00',workshop_card_title:'최대 9개의 바오를 직접 만들 수 있어요.',workshop_card_body:'모든 식재료, 앞치마, 포장 박스를 제공합니다. 좋아하는 재료를 가져와 나만의 맛을 더해도 됩니다.',price_one:'1인',price_two:'2인 가격',detail_min:'2인부터 진행',detail_time:'90분, 주말 오전',detail_take:'직접 만든 바오 최대 9개 포장 가능',detail_group:'단체 예약 문의 가능',cta_book_phone:'전화 / 메시지로 예약',visit_title:'방문 안내',visit_note:'예약 없이 방문 가능. 따뜻한 바오와 마당에서의 짧은 휴식을 즐겨보세요.',label_address:'주소',label_hours:'영업시간',label_contact:'연락처',full_address:'BAO29, 베이징 둥청구 젠창후통 29호',hours_text:'월요일–일요일 11:00–19:00',cta_open_map:'지도 열기',map_title:'붉은 담장을 찾고, 김이 나는 쪽으로 오세요.',footer_text:'타이완 × 베이징 스타일 수제 창작 바오 · 젠창후통 29호',tag_salty:'짭짤한 바오',tag_sweet:'달콤한 바오',tag_veg:'채소 바오',tag_drink:'차'
+      }
+    };
+
+    let currentLang='en';
+    const rail=document.getElementById('productRail');
+    function tagLabel(type){return dict[currentLang]['tag_'+type] || type}
+    function renderProducts(){
+      rail.innerHTML = products.map(p => `<article class="product-card"><img src="assets/images/${p.img}" alt="${p[currentLang] || p.en}"><div class="meta"><span class="tag ${p.type}">${tagLabel(p.type)}</span><p>${p.desc[currentLang] || p.desc.en}</p></div></article>`).join('');
+    }
+    function applyLang(lang){
+      currentLang=lang;
+      document.documentElement.lang=lang;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n; if(dict[lang][key]) el.textContent=dict[lang][key];});
+      document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+      renderProducts();
+    }
+    function syncMobileProcessScale(){
+      const grid=document.querySelector('.process-grid');
+      if(window.innerWidth<=560){
+        const scale=(window.innerWidth-32)/1120;
+        grid.style.transform=`scale(${scale})`;
+        grid.style.marginBottom=`${560*scale-560}px`;
+      }else{
+        grid.style.transform='';
+        grid.style.marginBottom='';
+      }
+    }
+    document.querySelectorAll('.lang button').forEach(btn=>btn.addEventListener('click',()=>applyLang(btn.dataset.lang)));
+    renderProducts();
+    syncMobileProcessScale();
+    window.addEventListener('resize',syncMobileProcessScale);
+
+    // Keep the standalone preview polished even when the original photo pack
+    // is not distributed with the HTML file.
+    const placeholderMeta = {
+      '20_5.webp':['Hutong bao shop','#d8412f','#ffd23c'],
+      '06_image_6.webp':['FRESH FROM THE STEAMER','#547c42','#ffd23c'],
+      '23_2.webp':['RED WALL COURTYARD','#122965','#ffd23c'],
+      '19_4.webp':['HUTONG RED DOOR','#d8412f','#fff9ec'],
+      '05_image_5.webp':['A QUIET COURTYARD MINUTE','#547c42','#fff9ec'],
+      '22_workshop7.webp':['WEEKEND BAO WORKSHOP','#122965','#ffd23c'],
+      '01_workshop5.webp':['FOLD BY HAND','#d8412f','#fff9ec'],
+      '02_workshop9.webp':['MAKE · STEAM · TASTE','#547c42','#ffd23c'],
+      '04_1.webp':['SCALLION PORK','#d8412f','#ffd23c'],
+      '25_3.webp':['FENNEL PORK','#547c42','#fff9ec'],
+      '24_2.webp':['RICE-POWDER PORK','#122965','#ffd23c'],
+      '16_4.webp':['RED BEAN CHOCOLATE','#d8412f','#ffdce8'],
+      '10_6.webp':['GUAVA TEA','#547c42','#d9f0cd'],
+      '15_7.webp':['WAXBERRY FRUIT TEA','#d8412f','#ffc6dc'],
+      '21_5.webp':['APPLE COLD BREW','#122965','#d9ebff']
+    };
+    function fallbackSvg(src){
+      const name=src.split('/').pop();
+      const [label,bg,accent]=placeholderMeta[name] || ['BAO29','#122965','#ffd23c'];
+      const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+        <rect width="800" height="800" fill="${bg}"/>
+        <circle cx="660" cy="130" r="185" fill="${accent}" opacity=".92"/>
+        <circle cx="155" cy="600" r="235" fill="${accent}" opacity=".26"/>
+        <path d="M215 482c30-142 319-150 368 0-52 86-318 89-368 0Z" fill="#fff9ec" stroke="#141414" stroke-width="16"/>
+        <path d="M267 452c25-89 52-137 133-137s111 48 135 137" fill="#fff9ec" stroke="#141414" stroke-width="16" stroke-linecap="round"/>
+        <path d="m320 393 40-52 40 52 40-52 40 52" fill="none" stroke="#141414" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="55" y="92" fill="#fff9ec" font-family="Arial, sans-serif" font-size="38" font-weight="900" letter-spacing="7">BAO29</text>
+        <text x="400" y="690" text-anchor="middle" fill="#fff9ec" font-family="Arial, sans-serif" font-size="28" font-weight="900" letter-spacing="3">${label}</text>
+      </svg>`;
+      return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+    }
+    function attachImageFallbacks(){
+      document.querySelectorAll('img').forEach(img=>{
+        const applyFallback=()=>{if(!img.src.startsWith('data:')) img.src=fallbackSvg(img.getAttribute('src'));};
+        img.addEventListener('error',applyFallback,{once:true});
+        if(img.complete && !img.naturalWidth) applyFallback();
+      });
+    }
+    attachImageFallbacks();
+    const railObserver=new MutationObserver(attachImageFallbacks);
+    railObserver.observe(rail,{childList:true});
+  </script>
+</body>
+</html>

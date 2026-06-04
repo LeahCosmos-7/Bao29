@@ -174,6 +174,34 @@
     }
     .process-grid{height:auto}
     .process-grid .process-path,.process-grid .step{display:none!important}
+    html{scrollbar-width:thin;scrollbar-color:rgba(166,43,36,.82) transparent}
+    html::-webkit-scrollbar{width:10px;height:10px}
+    html::-webkit-scrollbar-track{background:transparent}
+    html::-webkit-scrollbar-thumb{border:2px solid transparent;border-radius:999px;background:rgba(166,43,36,.82);background-clip:padding-box}
+    html::-webkit-scrollbar-button{display:none;width:0;height:0}
+    .rail,.new-arrivals-grid{scrollbar-width:thin;scrollbar-color:rgba(166,43,36,.82) transparent}
+    .rail::-webkit-scrollbar,.new-arrivals-grid::-webkit-scrollbar{height:10px}
+    .rail::-webkit-scrollbar-track,.new-arrivals-grid::-webkit-scrollbar-track{margin-inline:48px;background:transparent}
+    .rail::-webkit-scrollbar-thumb,.new-arrivals-grid::-webkit-scrollbar-thumb{border:2px solid transparent;border-radius:999px;background:rgba(166,43,36,.82);background-clip:padding-box}
+    .rail::-webkit-scrollbar-button,.new-arrivals-grid::-webkit-scrollbar-button{display:none;width:0;height:0}
+    @media(max-width:860px){
+      .about{background:var(--red)}
+      .about-inner{display:block;min-height:0;background:var(--red)}
+      .about-gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:420px;min-height:0}
+      .about-gallery img{width:100%;height:100%;min-height:0;object-fit:cover}
+      .about-copy{position:relative;z-index:1;margin:0;background:var(--red)}
+    }
+    @media(max-width:560px){
+      .about-inner{display:block;min-height:0;background:var(--red)}
+      .about-gallery{display:grid;grid-template-columns:1fr;grid-template-rows:none;gap:0;min-height:0;background:transparent}
+      .about-gallery img{width:100%;height:220px;min-height:0;object-fit:cover}
+      .about-copy{position:relative;z-index:1;margin:0;padding:42px 20px 48px;background:var(--red)}
+      .about-copy h2{font-size:42px}
+      .about-copy .big-quote{font-size:30px}
+      .rail,.new-arrivals-grid{scrollbar-width:thin;scrollbar-color:rgba(166,43,36,.82) transparent}
+      .rail::-webkit-scrollbar,.new-arrivals-grid::-webkit-scrollbar{height:10px}
+      .rail::-webkit-scrollbar-track,.new-arrivals-grid::-webkit-scrollbar-track{margin-inline:28px;background:transparent}
+    }
   </style>
 </head>
 <body>

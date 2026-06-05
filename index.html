@@ -262,7 +262,7 @@
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span><span>Taiwan ✖️ Beijing flavors</span></div></div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span>台湾的热闹，北京的院子</span><span>红墙边的热包子</span><span>果茶、小食和胡同散步</span><span>台湾的热闹，北京的院子</span><span>红墙边的热包子</span><span>果茶、小食和胡同散步</span></div></div>
 
     <section class="products" id="products">
       <div class="wrap">
@@ -469,6 +469,13 @@
 
     let currentLang='zh';
     const rail=document.getElementById('productRail');
+    const tickerTrack=document.getElementById('tickerTrack');
+    const tickerSlogans = {
+      en: ['Taiwan comfort, Beijing courtyard', 'Hot bao by the red wall', 'Fruit tea for hutong walks'],
+      zh: ['台湾的热闹，北京的院子', '红墙边的热包子', '果茶、小食和胡同散步'],
+      ja: ['台湾のにぎわい、北京の中庭', '赤い壁のそばで熱々バオ', 'フルーツティーと胡同さんぽ'],
+      ko: ['타이완의 활기, 베이징의 마당', '붉은 담장 옆 따뜻한 바오', '과일차와 후통 산책']
+    };
     const processImages = {
       zh: {
         desktop: 'assets/images/bao29-process-zh-desktop.png',
@@ -486,6 +493,10 @@
     function tagLabel(type){return dict[currentLang]['tag_'+type] || type}
     function renderProducts(){
       rail.innerHTML = products.map(p => `<article class="product-card"><img src="assets/images/${p.img}" alt="${p[currentLang] || p.en}"><div class="meta"><span class="tag ${p.type}">${tagLabel(p.type)}</span><p>${p.desc[currentLang] || p.desc.en}</p></div></article>`).join('');
+    }
+    function renderTicker(){
+      const slogans = tickerSlogans[currentLang] || tickerSlogans.en;
+      tickerTrack.innerHTML = [...slogans, ...slogans, ...slogans].map(text => `<span>${text}</span>`).join('');
     }
     function updateProcessImages(){
       const source = currentLang === 'zh' ? processImages.zh : processImages.default;
@@ -506,6 +517,7 @@
       document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n; if(dict[lang][key]) el.textContent=dict[lang][key];});
       document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
       renderProducts();
+      renderTicker();
       updateProcessImages();
     }
     function syncMobileProcessScale(){

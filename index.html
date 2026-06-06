@@ -31,8 +31,7 @@
     .kicker,.eyebrow{color:var(--red);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
     h1,h2,.headline,.big-quote{font-family:var(--display)}h1{margin:6px 0 8px;font-size:clamp(96px,18vw,224px);font-weight:900;line-height:.78;letter-spacing:-.13em;color:var(--ink)}
     .headline{margin:4px auto 14px;max-width:850px;color:var(--navy);font-size:clamp(25px,4.2vw,54px);font-weight:900;line-height:.97;letter-spacing:-.07em}
-    .subhead{max-width:680px;margin:0 auto;color:#27231f;font-size:clamp(16px,1.8vw,22px);font-weight:650}.info-row{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
-    .pill{padding:7px 11px;border:1px solid var(--ink);border-radius:999px;background:rgba(255,248,237,.78);font-size:12px;font-weight:800}
+    .subhead{max-width:680px;margin:0 auto;color:#27231f;font-size:clamp(16px,1.8vw,22px);font-weight:650}
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:999px;padding:12px 19px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:.18s transform,.18s background;cursor:pointer}.btn:hover{transform:translateY(-3px) rotate(-1deg)}
     .btn.primary{background:var(--navy);border-color:var(--navy);color:white}.btn.secondary{background:var(--yellow)}.btn.dark{background:var(--pine);border-color:var(--pine);color:white}
     .hero-card{position:absolute;right:-50px;bottom:-145px;width:220px;padding:10px;background:var(--paper);border:1px solid var(--ink);transform:rotate(7deg)}.hero-card img{aspect-ratio:1;object-fit:cover}
@@ -47,7 +46,7 @@
     .visit{background:var(--paper)}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visit-card,.map-card{padding:27px;border:1px solid var(--ink);background:var(--bg)}.visit-card h3{margin:0 0 14px;color:var(--navy);font-family:var(--display);font-size:40px;letter-spacing:-.06em}.visit-card p{font-size:17px;font-weight:700}.map-card{display:grid;place-items:center;min-height:290px;background:repeating-linear-gradient(135deg,#f6f0e6,#f6f0e6 18px,#fff8ed 18px,#fff8ed 36px);text-align:center}.map-pin{color:var(--red);font-size:72px;line-height:1}
     .footer{padding:26px 24px;background:var(--ink);color:var(--paper)}.footer-inner{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.footer strong{font-family:var(--display);font-size:30px;letter-spacing:-.06em}.footer span,.footer a{color:#e5ddd2;font-size:13px;font-weight:700}.footer-links{display:flex;gap:15px;flex-wrap:wrap}
     @media(max-width:860px){.nav{grid-template-columns:1fr auto}.brandmark{grid-column:1;grid-row:1}.navlinks.left{display:none}.navlinks.right{grid-column:2;grid-row:1}.navlinks.right>a{display:none}.hero{min-height:76vh}.hero-card{display:none}.process-grid{grid-template-columns:repeat(2,1fr)}.step:nth-child(even){transform:rotate(-1deg)}.about-inner,.visit-grid{grid-template-columns:1fr}.about-gallery{min-height:420px}.about-copy{padding:54px 25px}.workshop-photos{gap:8px}.workshop-card{padding:22px}}
-    @media(max-width:560px){section{padding:72px 16px}.announcement{font-size:9px}.nav{padding:12px 14px;gap:8px}.brandmark{font-size:27px}.lang{gap:3px}.lang button{padding:4px 5px;font-size:9px}.hero-inner{padding:65px 8px 48px}h1{font-size:clamp(90px,31vw,150px)}.headline{font-size:29px}.subhead{font-size:15px}.info-row{gap:6px}.pill{padding:6px 8px;font-size:11px}.cta-row{justify-content:center}.btn{padding:10px 13px;font-size:10px}.process-grid{grid-template-columns:1fr}.rail{grid-auto-columns:minmax(215px,76vw);padding-inline:16px}.about-gallery{min-height:330px}.about-copy{padding:48px 18px}.workshop-photos{grid-template-columns:1fr}.workshop-photos img{aspect-ratio:1.3/1}.price-row,.details{grid-template-columns:1fr}.visit-card,.map-card{padding:20px}}
+    @media(max-width:560px){section{padding:72px 16px}.announcement{font-size:9px}.nav{padding:12px 14px;gap:8px}.brandmark{font-size:27px}.lang{gap:3px}.lang button{padding:4px 5px;font-size:9px}.hero-inner{padding:65px 8px 48px}h1{font-size:clamp(90px,31vw,150px)}.headline{font-size:29px}.subhead{font-size:15px}.cta-row{justify-content:center}.btn{padding:10px 13px;font-size:10px}.process-grid{grid-template-columns:1fr}.rail{grid-auto-columns:minmax(215px,76vw);padding-inline:16px}.about-gallery{min-height:330px}.about-copy{padding:48px 18px}.workshop-photos{grid-template-columns:1fr}.workshop-photos img{aspect-ratio:1.3/1}.price-row,.details{grid-template-columns:1fr}.visit-card,.map-card{padding:20px}}
 
     /* Modern Chinese refinement: restrained red, warm white, crisp ink lines. */
     :root{
@@ -62,7 +61,7 @@
     .navlinks{color:#352a27}.lang button{border-color:rgba(166,43,36,.5);border-radius:2px;color:var(--red);font-family:var(--sans)}.lang button.active{background:var(--red);border-color:var(--red)}
     .hero-bg img{filter:saturate(.76) contrast(1.04)}.hero-bg:after{background:linear-gradient(180deg,rgba(255,253,248,.46),rgba(255,253,248,.78) 69%,rgba(255,253,248,.94))}
     h1{color:var(--red);font-family:var(--display);font-weight:800;letter-spacing:-.12em}.headline{color:var(--ink);font-weight:800}.kicker,.eyebrow{color:var(--red)}
-    .pill{border-color:rgba(166,43,36,.56);border-radius:2px;background:rgba(255,253,248,.82);color:#412923}.btn{border-radius:2px;box-shadow:none}.btn:hover{transform:translateY(-2px)}.btn.primary,.btn.dark{background:var(--red);border-color:var(--red)}.btn.secondary{background:var(--paper);border-color:var(--red);color:var(--red)}
+    .btn{border-radius:2px;box-shadow:none}.btn:hover{transform:translateY(-2px)}.btn.primary,.btn.dark{background:var(--red);border-color:var(--red)}.btn.secondary{background:var(--paper);border-color:var(--red);color:var(--red)}
     .hero-card{border-color:var(--red);background:var(--paper)}
     .ticker{border-color:var(--red);background:var(--paper);color:var(--red)}
     .section-title:before{color:var(--red)}h2{color:var(--red);font-weight:800}
@@ -82,7 +81,6 @@
     .hero .kicker,.hero .headline,.hero .subhead{color:#fff}
     .hero .headline{margin-top:2px;max-width:900px;font-size:clamp(28px,3.6vw,46px);line-height:1.08;letter-spacing:.015em}
     .hero .subhead{max-width:750px;font-size:clamp(13px,1.25vw,16px);font-weight:400;line-height:1.55;letter-spacing:.01em}
-    .hero .pill{border-color:rgba(255,255,255,.88);background:rgba(55,19,16,.52);color:#fff;text-shadow:none}
     .hero .btn{border-color:#fff;text-shadow:none}
     .hero .btn.primary,.hero .btn.dark{background:rgba(166,43,36,.92);border-color:#fff}
     .hero .btn.secondary{background:rgba(255,253,248,.94);border-color:#fff;color:var(--red)}
@@ -247,11 +245,6 @@
           <h1>BAO29</h1>
           <p class="headline" data-i18n="hero_headline">台湾北京融合风味的包子&小食铺</p>
           <p class="subhead" data-i18n="hero_subhead">The Hutong bao shop beside the Guozijian. Hot bao, fruit tea, and weekend bao-making workshops.</p>
-          <div class="info-row">
-            <span class="pill" data-i18n="hero_address">No.29 Jianchang Hutong, Dongcheng, Beijing</span>
-            <span class="pill" data-i18n="hero_hours">Open daily 11:00–19:00</span>
-            <span class="pill" data-i18n="hero_takeaway">Takeaway friendly</span>
-          </div>
           <div class="cta-row">
             <a class="btn primary" href="#products" data-i18n="cta_menu">View Menu</a>
             <a class="btn secondary" href="#workshop" data-i18n="cta_workshop">Book Workshop</a>
@@ -262,7 +255,7 @@
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span>台湾的热闹，北京的院子</span><span>红墙边的热包子</span><span>果茶、小食和胡同散步</span><span>台湾的热闹，北京的院子</span><span>红墙边的热包子</span><span>果茶、小食和胡同散步</span></div></div>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"><span>北京市东城区箭厂胡同29号</span><span>每日 11:00–19:00</span><span>支持外带</span><span>北京市东城区箭厂胡同29号</span><span>每日 11:00–19:00</span><span>支持外带</span></div></div>
 
     <section class="products" id="products">
       <div class="wrap">
@@ -470,12 +463,6 @@
     let currentLang='zh';
     const rail=document.getElementById('productRail');
     const tickerTrack=document.getElementById('tickerTrack');
-    const tickerSlogans = {
-      en: ['Taiwan comfort, Beijing courtyard', 'Hot bao by the red wall', 'Fruit tea for hutong walks'],
-      zh: ['台湾的热闹，北京的院子', '红墙边的热包子', '果茶、小食和胡同散步'],
-      ja: ['台湾のにぎわい、北京の中庭', '赤い壁のそばで熱々バオ', 'フルーツティーと胡同さんぽ'],
-      ko: ['타이완의 활기, 베이징의 마당', '붉은 담장 옆 따뜻한 바오', '과일차와 후통 산책']
-    };
     const processImages = {
       zh: {
         desktop: 'assets/images/bao29-process-zh-desktop.png',
@@ -495,8 +482,9 @@
       rail.innerHTML = products.map(p => `<article class="product-card"><img src="assets/images/${p.img}" alt="${p[currentLang] || p.en}"><div class="meta"><span class="tag ${p.type}">${tagLabel(p.type)}</span><p>${p.desc[currentLang] || p.desc.en}</p></div></article>`).join('');
     }
     function renderTicker(){
-      const slogans = tickerSlogans[currentLang] || tickerSlogans.en;
-      tickerTrack.innerHTML = [...slogans, ...slogans, ...slogans].map(text => `<span>${text}</span>`).join('');
+      const copy = dict[currentLang] || dict.en;
+      const details = [copy.hero_address, copy.hero_hours, copy.hero_takeaway];
+      tickerTrack.innerHTML = [...details, ...details, ...details].map(text => `<span>${text}</span>`).join('');
     }
     function updateProcessImages(){
       const source = currentLang === 'zh' ? processImages.zh : processImages.default;
